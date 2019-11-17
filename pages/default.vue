@@ -19,7 +19,7 @@
         >
           GitHub
         </a> -->
-        <nuxt-link to="/" class="button--grey">Index</nuxt-link>
+        <nuxt-link to="/about" class="button--grey">About</nuxt-link>
       </div>
     </div>
   </div>
@@ -31,15 +31,6 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
-  },
-  asyncData(context) {
-    console.log(`process.server `, process.server)
-    console.log(`process.client `, process.client)
-    console.log(`process.static `, process.static)
-    // called every time before loading the component
-    // as the name said, it can be async
-    // Also, the returned object will be merged with your data object
-    return { name: 'World' }
   }
 }
 </script>

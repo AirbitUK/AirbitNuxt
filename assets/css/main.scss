@@ -1,0 +1,24 @@
+body {
+    color:#fff;
+    background: #221e23 !important;
+}
+.el-card{
+    background: #29252a !important;
+    border: none;
+    color: #fff;
+    .el-card__header{
+        font-size: 20px;
+        font-weight: 600;
+        background:#343035 !important;
+        border-bottom: none;
+    }
+    .el-card__body{
+        .item{
+            border-bottom: 1px solid #343035;
+            padding: 15px 0;
+            .avatar{
+                margin:0 5px;
+            }
+        }
+    }
+}

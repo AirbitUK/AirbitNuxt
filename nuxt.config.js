@@ -23,7 +23,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['element-ui/lib/theme-chalk/index.css'],
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    // SCSS file in the project
+    '@/assets/css/main.scss'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -40,8 +44,15 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'bootstrap-vue/nuxt'
   ],
+  bootstrapVue: {
+    // bootstrapCSS: false, // Or `css: false`
+    // bootstrapVueCSS: false // Or `bvCSS: false`
+    componentPlugins: ['LayoutPlugin'],
+    directivePlugins: []
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
