@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import Navbar from '~/components/Navbar.vue'
-import Searchbox from '~/components/Searchbox.vue'
+import Navbar from '~/components/shared/Navbar.vue'
+import Searchbox from '~/components/shared/Searchbox.vue'
 
 export default {
   components: {
