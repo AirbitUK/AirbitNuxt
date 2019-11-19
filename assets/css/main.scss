@@ -1,5 +1,12 @@
-$main-color:#8b21ac;
-
+@import "variables";
+.text-muted{color: #948799 !important}
+.white-a{
+    color:#fff;
+    &:hover{color:#fff;}
+}
+.font-13{font-size: 13px}
+.font-14{font-size: 14px}
+a{text-decoration:none !important}
 body {
     color:#fff;
     background: #221e23 !important;
@@ -55,12 +62,17 @@ body {
         .item{
             border-bottom: 1px solid #343035;
             padding: 15px 0;
+            display: flex;
+            align-items: center;
+            .row{
+                width: calc(100% + 30px);
+            }
             .position{
                 color: #474048;
                 font-weight: 700;
             }
             .avatar{
-                margin:0 6px;
+                margin:0 12px;
                 border: 1px solid #343035;
                 border-radius: 3px;
                 width: 50px;
@@ -72,6 +84,7 @@ body {
                 border-bottom: none;
                 padding-bottom: 0;
                 font-weight: 500;
+                justify-content: flex-end;
                 a{
                     color:#fff;
                     &:hover{text-decoration: none}

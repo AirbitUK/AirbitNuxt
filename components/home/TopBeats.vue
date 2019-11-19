@@ -2,7 +2,7 @@
   <div class="top-producers-wrapper">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>TOP PRODUCERS</span>
+        <span>TOP BEATS</span>
         <div class="pagination">
           <span
             v-loading="loading"

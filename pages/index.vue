@@ -14,6 +14,7 @@
       </div>
       <div class="col-md-4">
         <TopProducers />
+        <TopBeats />
       </div>
     </div>
   </div>
@@ -23,12 +24,14 @@
 import FeaturedBeats from '~/components/home/FeaturedBeats.vue'
 import TopProducers from '~/components/home/TopProducers.vue'
 import LatestReleases from '~/components/home/LatestReleases.vue'
+import TopBeats from '~/components/home/TopBeats.vue'
 
 export default {
   components: {
     FeaturedBeats,
     TopProducers,
-    LatestReleases
+    LatestReleases,
+    TopBeats
   },
   loading: false
 }
