@@ -1,11 +1,15 @@
 @import "variables";
 .text-muted{color: #948799 !important}
-.white-a{
+a,.white-a{
     color:#fff;
     &:hover{color:#fff;}
 }
 .font-13{font-size: 13px}
 .font-14{font-size: 14px}
+.font-15{font-size: 15px}
+.bg-mid-grey{
+    background: #343035 !important;
+}
 a{text-decoration:none !important}
 body {
     color:#fff;
@@ -70,6 +74,8 @@ body {
             .position{
                 color: #474048;
                 font-weight: 700;
+                min-width: 26px;
+                text-align: center;
             }
             .avatar{
                 margin:0 12px;
@@ -90,10 +96,43 @@ body {
                     &:hover{text-decoration: none}
                     i{
                         color:$main-color;
-                        font-weight: 700;
-                        font-size: 17px;
+                        font-weight: 900;
+                        font-size: 24px;
+                        margin: 0 5px;
+                        position: relative;
+                        top: 3px;
                     }
                 }
+            }
+        }
+    }
+}
+.beats-container{
+    .beat-container{
+        border-radius: 3px;
+        overflow: hidden;
+        position: relative;
+        .free-download-banner{
+            position: absolute;
+            background: #75B200;
+            top: 9px;
+            left: -20px;
+            width: 80px;
+            height: 20px;
+            padding: 2px;
+            text-align: center;
+            transform: rotate(-45deg);
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            z-index: 20;
+        }
+        .beat-info{
+            padding: 5px 8px;
+            font-size:13px;
+            .price-details{
+                border-top: 1px solid #3B3D40;
+                padding-top: 5px;
+                margin-top: 5px;
             }
         }
     }

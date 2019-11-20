@@ -46,7 +46,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/font-awesome'
   ],
   bootstrapVue: {
     // bootstrapCSS: false, // Or `css: false`

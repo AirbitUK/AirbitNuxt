@@ -8,22 +8,28 @@
         <div class="row">
           <div class="col-md-4">
             <div class="d-flex">
-              <img
-                v-if="i.artwork && i.artwork.files"
-                :src="i.artwork && i.artwork.files ? i.artwork.files['50'] : ''"
-                :alt="i.name"
-                class="avatar"
-              />
-              <img
-                v-else-if="i.user && i.user.avatar && i.user.avatar.files"
-                :src="
-                  i.user && i.user.avatar && i.user.avatar.files
-                    ? i.user.avatar.files['50']
-                    : ''
-                "
-                :alt="i.name"
-                class="avatar"
-              />
+              <div class="avatar-container">
+                <div class="overlay"></div>
+                <i class="fa fa-play"></i>
+                <img
+                  v-if="i.artwork && i.artwork.files"
+                  :src="
+                    i.artwork && i.artwork.files ? i.artwork.files['50'] : ''
+                  "
+                  :alt="i.name"
+                  class="avatar"
+                />
+                <img
+                  v-else-if="i.user && i.user.avatar && i.user.avatar.files"
+                  :src="
+                    i.user && i.user.avatar && i.user.avatar.files
+                      ? i.user.avatar.files['50']
+                      : ''
+                  "
+                  :alt="i.name"
+                  class="avatar"
+                />
+              </div>
               <div class="text-truncate">
                 <a href="" class="beat-name text-nowrap white-a font-13">
                   {{ i.name }}
@@ -42,12 +48,37 @@
             </div>
           </div>
           <div class="col-md-5">
-            <div class="actions d-flex justify-content-between mr-2">
+            <div class="actions d-flex mr-2">
               <div class="icons-wrapper">
-                <i class="el-icon-service"></i>
-                <i class="el-icon-thumb"></i>
-                <i class="el-icon-share"></i>
-                <i class="el-icon-download"></i>
+                <div class="icon">
+                  <el-tooltip content="Add to playlist" placement="top">
+                    <i class="fa fa-headphones"></i>
+                  </el-tooltip>
+                </div>
+                <div class="icon">
+                  <el-tooltip content="Like" placement="top">
+                    <div class="like-wrapper">
+                      <i class="fa fa-heart"></i>
+                      <span class="like-count text-muted font-14">{{
+                        i.likes
+                      }}</span>
+                    </div>
+                  </el-tooltip>
+                </div>
+                <div class="icon">
+                  <el-tooltip content="Share" placement="top">
+                    <i class="fa fa-share-alt"></i>
+                  </el-tooltip>
+                </div>
+                <div class="icon free-download">
+                  <el-tooltip
+                    v-if="i.freeDownload"
+                    content="Download a FREE version"
+                    placement="top"
+                  >
+                    <i class="fa fa-download"></i>
+                  </el-tooltip>
+                </div>
               </div>
               <div class="price">
                 <el-button
@@ -67,7 +98,7 @@
       <div v-if="items && items.length > 0" class="text item view-all">
         <a href="" class="white-a">
           VIEW ALL
-          <i class="el-icon-arrow-right"></i>
+          <i class="fa fa-angle-right"></i>
         </a>
       </div>
     </el-card>
@@ -76,23 +107,16 @@
 
 <script>
 export default {
-  data() {
-    return {
-      page: 1,
-      items: []
+  props: {
+    items: {
+      type: Array,
+      required: true,
+      default: () => []
     }
   },
-  created() {
-    this.fetchLatestReleases()
-  },
-  methods: {
-    async fetchLatestReleases() {
-      const endpointUrl = `https://api.airbit.com/beats/search?page=${this.page}&limit=12&search=&genre=0&moods=0&added=3&tempo=0&order=plays&free_download=0&marketplace=1&expand=user`
-      this.loading = true
-      const data = await this.$axios.$get(endpointUrl)
-      if (data && data.items) {
-        this.items = data.items
-      }
+  data() {
+    return {
+      page: 1
     }
   }
 }
@@ -107,27 +131,62 @@ export default {
       transition: all 0.2s ease;
       padding: 7px 0;
       cursor: pointer;
-      &:hover {
-        background: #343035;
+      position: relative;
+      &.view-all {
+        cursor: auto !important;
+        background: transparent;
+        padding-top: 25px;
+        padding-bottom: 5px;
+      }
+      .avatar-container {
+        height: 40px !important;
+        position: relative;
+        .overlay {
+          position: absolute;
+          top: 0;
+          width: 40px;
+          height: 40px;
+          left: 12px;
+          background-color: rgba(0, 0, 0, 0.35);
+          z-index: 3;
+          display: none;
+        }
+        i.fa-play {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 30px;
+          z-index: 5;
+          display: none;
+        }
+        img.avatar {
+          width: 40px !important;
+          height: 40px !important;
+        }
       }
       .user-name-wrapper {
         height: 100%;
         display: flex;
         align-items: center;
       }
-      img.avatar {
-        width: 40px !important;
-        height: 40px !important;
-      }
       .actions {
         display: flex;
-        justify-content: space-between !important;
+        justify-content: flex-end !important;
         height: 100%;
         align-items: center;
         .icons-wrapper {
-          i {
+          display: flex;
+          .icon {
+            justify-content: space-between;
             cursor: pointer;
-            margin: 0 5px;
+            margin: 0 14px;
+            visibility: hidden;
+            min-width: 15px;
+            &.free-download {
+              color: #75b200;
+              visibility: visible;
+            }
           }
         }
         .price button {
@@ -140,9 +199,22 @@ export default {
           letter-spacing: 0.5px;
           min-width: 69px;
           margin-left: 15px;
+          i {
+            font-weight: 700;
+          }
           &:hover {
             background-color: darken($main-color, 5%);
           }
+        }
+      }
+      &:not(.view-all):hover {
+        background: #343035;
+        .avatar-container .overlay,
+        .avatar-container i.fa-play {
+          display: block;
+        }
+        .icons-wrapper .icon {
+          visibility: visible;
         }
       }
     }

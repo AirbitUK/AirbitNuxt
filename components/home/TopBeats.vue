@@ -26,16 +26,23 @@
           :alt="p.name"
           class="avatar"
         />
-        <div class="user-name text-truncate">
-          <a href="" class="white-a">
-            {{ p.name }}
-          </a>
+        <div class="item-info text-truncate">
+          <div class="beat-name text-truncate">
+            <a href="" class="white-a font-15"
+              >Mac Miller Type Beat - 'Netflix and Chill</a
+            >
+          </div>
+          <div class="user-name text-truncate">
+            <a href="" class="white-a text-muted">
+              {{ p.name }}
+            </a>
+          </div>
         </div>
       </div>
       <div v-if="producers && producers.length > 0" class="text item view-all">
         <a href="">
           VIEW ALL
-          <i class="el-icon-arrow-right"></i>
+          <i class="fa fa-angle-right"></i>
         </a>
       </div>
     </el-card>

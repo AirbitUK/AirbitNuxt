@@ -26,16 +26,18 @@
           :alt="p.name"
           class="avatar"
         />
-        <div class="user-name text-truncate">
-          <a href="" class="white-a">
-            {{ p.name }}
-          </a>
+        <div class="item-info">
+          <div class="user-name text-truncate">
+            <a href="" class="white-a">
+              {{ p.name }}
+            </a>
+          </div>
         </div>
       </div>
       <div v-if="producers && producers.length > 0" class="text item view-all">
         <a href="">
           VIEW ALL
-          <i class="el-icon-arrow-right"></i>
+          <i class="fa fa-angle-right"></i>
         </a>
       </div>
     </el-card>
@@ -44,17 +46,23 @@
 
 <script>
 export default {
+  props: {
+    producers: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
+  },
   data() {
     return {
       page: 1,
-      producers: [],
       allProducers: [],
       allProducersLoaded: false,
       loading: false
     }
   },
   created() {
-    this.fetchProducers()
+    this.allProducers = this.producers
   },
   methods: {
     // Fetch a new producers page
