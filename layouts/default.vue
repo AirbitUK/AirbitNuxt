@@ -10,7 +10,7 @@
                 <Searchbox />
               </div>
               <div class="col-md-12">
-                <div class="page-content">
+                <div class="page-content mt-4">
                   <nuxt />
                 </div>
               </div>

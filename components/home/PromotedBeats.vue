@@ -5,7 +5,7 @@
         <span>PROMOTED BEATS</span>
       </div>
       <div class="beats-container">
-        <div class="row">
+        <div class="row no-gutters">
           <div v-for="i in items" :key="i.id" class="col-lg-4">
             <div class="beat-container">
               <div v-if="i.free" class="free-download-banner">FREE</div>
@@ -106,12 +106,24 @@ export default {
           user: {
             name: 'Lance Whitley'
           }
+        },
+        {
+          id: 4,
+          likes: 0,
+          comments: 2,
+          avatar:
+            'https://cdn.airbit.com/artwork/17f849ebd4f889418523f5d325556c63@300x.jpg',
+          free: false,
+          beat: {
+            name: 'Halogen'
+          },
+          user: {
+            name: 'Lance Whitley'
+          }
         }
       ]
     }
-  },
-  created() {},
-  methods: {}
+  }
 }
 </script>
 

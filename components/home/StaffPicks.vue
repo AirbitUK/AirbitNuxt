@@ -6,7 +6,7 @@
         <div class="second-heading">PICKS</div>
       </div>
       <div class="beats-container">
-        <div class="row">
+        <div class="row no-gutters">
           <div v-for="i in items" :key="i.id" class="col-lg-3">
             <div class="beat-container">
               <div v-if="i.free" class="free-download-banner">FREE</div>

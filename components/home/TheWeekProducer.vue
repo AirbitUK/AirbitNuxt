@@ -1,25 +1,24 @@
 <template>
-  <div class="top-beats-wrapper">
+  <div class="the-week-producer-wrapper">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>TOP BEATS</span>
-        <div class="pagination">
-          <span
-            v-loading="loading"
-            class="loading-indicator"
-            element-loading-spinner="el-icon-loading"
-          >
-          </span>
-          <el-button @click="previousPage()" type="text">
-            <i class="el-icon-caret-left"></i>
-          </el-button>
-          <el-button @click="nextPage()" type="text">
-            <i class="el-icon-caret-right"></i>
-          </el-button>
+        <span>PRODUCER OF THE WEEK</span>
+      </div>
+      <div class="winner-info">
+        <div class="winner-avatar">
+          <img
+            src="https://cdn.airbit.com/avatars/b3bcd20ed98a18dbb1d9585658dbed21@600x.jpg"
+            alt="producer name"
+          />
+        </div>
+        <div class="winner-name">
+          SUPAMARIOBEATZ
         </div>
       </div>
       <div v-for="p in producers" :key="p.id" class="text item">
-        <span class="position">{{ p.position }}</span>
+        <span class="play-icon">
+          <i class="fa fa-play"></i>
+        </span>
         <img
           :v-if="p.avatar && p.avatar.files"
           :src="p.avatar && p.avatar.files ? p.avatar.files['50'] : ''"
@@ -32,10 +31,13 @@
               >Mac Miller Type Beat - 'Netflix and Chill</a
             >
           </div>
-          <div class="user-name text-truncate">
+          <div class="genre-name text-truncate">
             <a href="" class="white-a text-muted">
               {{ p.name }}
             </a>
+          </div>
+          <div class="prices text-muted font-13">
+            <span>From $15.00</span>
           </div>
         </div>
       </div>
@@ -120,4 +122,40 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.the-week-producer-wrapper {
+  .el-card__body {
+    .winner-info {
+      margin: -20px -15px 0;
+      .winner-avatar {
+        img {
+          max-height: 350px;
+          width: 100%;
+        }
+      }
+      .winner-name {
+        padding: 15px;
+        border-bottom: 1px solid #353036;
+      }
+    }
+    .item {
+      padding: 15px 5px;
+      .play-icon {
+        width: 25px;
+        i {
+          font-size: 14px;
+        }
+      }
+      img.avatar {
+        border-radius: 3px;
+        margin: 0 10px;
+      }
+      .item-info {
+        .genre-name {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+</style>

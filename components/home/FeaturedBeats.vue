@@ -1,6 +1,6 @@
 <template>
   <div class="featured-beats-wrapper">
-    <div class="block">
+    <div class="carousel">
       <el-carousel trigger="click" arrow="never" height="390px">
         <el-carousel-item v-for="slide in slides" :key="slide.id">
           <a :href="slide.link">
@@ -38,7 +38,7 @@ export default {
 <style lang="scss">
 .featured-beats-wrapper {
   margin-bottom: 5px;
-  .block {
+  .carousel {
     width: 100%;
     .el-carousel {
       .el-carousel__item {

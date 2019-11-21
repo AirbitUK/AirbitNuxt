@@ -10,6 +10,7 @@
       <div class="col-md-4">
         <TopProducers :items="topProducers" />
         <TopBeats :items="topProducers" />
+        <TheWeekProducer :items="topProducers" />
       </div>
     </div>
   </div>
@@ -22,6 +23,7 @@ import StaffPicks from '~/components/home/StaffPicks.vue'
 import TopProducers from '~/components/home/TopProducers.vue'
 import LatestReleases from '~/components/home/LatestReleases.vue'
 import TopBeats from '~/components/home/TopBeats.vue'
+import TheWeekProducer from '~/components/home/TheWeekProducer.vue'
 
 export default {
   components: {
@@ -30,7 +32,8 @@ export default {
     StaffPicks,
     TopProducers,
     LatestReleases,
-    TopBeats
+    TopBeats,
+    TheWeekProducer
   },
   loading: false,
   async asyncData({ $axios }) {

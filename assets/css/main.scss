@@ -63,6 +63,7 @@ body {
         }
     }
     .el-card__body{
+        padding:20px 15px;
         .item{
             border-bottom: 1px solid #343035;
             padding: 15px 0;
@@ -112,6 +113,7 @@ body {
         border-radius: 3px;
         overflow: hidden;
         position: relative;
+        margin:0 5px 10px;
         .free-download-banner{
             position: absolute;
             background: #75B200;
