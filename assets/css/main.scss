@@ -129,11 +129,33 @@ body {
         .beat-info{
             padding: 5px 8px;
             font-size:13px;
+            position: relative;
+            z-index: 5;
             .price-details{
                 border-top: 1px solid #3B3D40;
                 padding-top: 5px;
                 margin-top: 5px;
             }
+        }
+        .hover-menu{
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 0;
+            position: absolute;
+            bottom: 79px;
+            width: 100%;
+            transition: all 0.1s linear;            
+            height: 0;
+            overflow: hidden;
+            align-items:center; 
+            .hover-menu-icon{
+                cursor: pointer;
+                font-size: 14px;
+            }
+        }
+        &:hover .hover-menu{
+            height: 24px;
         }
     }
 }

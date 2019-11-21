@@ -47,7 +47,7 @@
 <script>
 export default {
   props: {
-    producers: {
+    items: {
       type: Array,
       required: true,
       default: () => []
@@ -57,12 +57,14 @@ export default {
     return {
       page: 1,
       allProducers: [],
+      producers: [],
       allProducersLoaded: false,
       loading: false
     }
   },
   created() {
-    this.allProducers = this.producers
+    this.producers = this.items
+    this.allProducers = this.items
   },
   methods: {
     // Fetch a new producers page

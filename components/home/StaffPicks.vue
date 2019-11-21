@@ -42,6 +42,17 @@
                   <a href="">BUY NOW</a>
                 </div>
               </div>
+              <div class="hover-menu">
+                <span class="hover-menu-icon">
+                  <i class="fa fa-play"></i>
+                </span>
+                <span class="hover-menu-icon">
+                  <i class="fa fa-forward"></i>
+                </span>
+                <span class="hover-menu-icon">
+                  <i class="fa fa-headphones"></i>
+                </span>
+              </div>
             </div>
           </div>
         </div>

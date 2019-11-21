@@ -8,8 +8,8 @@
         <LatestReleases :items="latestReleases" />
       </div>
       <div class="col-md-4">
-        <TopProducers :producers="topProducers" />
-        <TopBeats />
+        <TopProducers :items="topProducers" />
+        <TopBeats :items="topProducers" />
       </div>
     </div>
   </div>

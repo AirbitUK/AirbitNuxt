@@ -51,6 +51,13 @@
 
 <script>
 export default {
+  props: {
+    items: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
+  },
   data() {
     return {
       page: 1,
@@ -61,7 +68,8 @@ export default {
     }
   },
   created() {
-    this.fetchProducers()
+    this.producers = this.items
+    this.allProducers = this.items
   },
   methods: {
     // Fetch a new producers page
