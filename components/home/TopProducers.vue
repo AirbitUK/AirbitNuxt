@@ -2,7 +2,7 @@
   <div class="top-producers-wrapper">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>TOP PRODUCERS</span>
+        <span class="heading">TOP PRODUCERS</span>
         <div class="pagination">
           <span
             v-loading="loading"
@@ -26,7 +26,7 @@
           :alt="p.name"
           class="avatar"
         />
-        <div class="item-info">
+        <div class="item-info text-truncate">
           <div class="user-name text-truncate">
             <a href="" class="white-a">
               {{ p.name }}

@@ -3,7 +3,7 @@
     <div>
       <Navbar />
       <div class="wrapper-content">
-        <div class="container">
+        <div class="container-fluid">
           <div class="wrapper-container">
             <div class="row">
               <div class="col-md-12">
@@ -52,5 +52,10 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 1140px;
+  }
 }
 </style>

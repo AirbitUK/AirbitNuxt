@@ -4,6 +4,7 @@
       <div class="col-md-8">
         <FeaturedBeats />
         <PromotedBeats />
+        <JoinUs />
         <StaffPicks />
         <LatestReleases :items="latestReleases" />
       </div>
@@ -24,6 +25,7 @@ import TopProducers from '~/components/home/TopProducers.vue'
 import LatestReleases from '~/components/home/LatestReleases.vue'
 import TopBeats from '~/components/home/TopBeats.vue'
 import TheWeekProducer from '~/components/home/TheWeekProducer.vue'
+import JoinUs from '~/components/home/JoinUs.vue'
 
 export default {
   components: {
@@ -33,7 +35,8 @@ export default {
     TopProducers,
     LatestReleases,
     TopBeats,
-    TheWeekProducer
+    TheWeekProducer,
+    JoinUs
   },
   loading: false,
   async asyncData({ $axios }) {
@@ -73,4 +76,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.home-page > .row > [class*='col'] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+</style>

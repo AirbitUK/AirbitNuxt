@@ -2,7 +2,7 @@
   <div class="top-beats-wrapper">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>TOP BEATS</span>
+        <span class="heading">TOP BEATS</span>
         <div class="pagination">
           <span
             v-loading="loading"
@@ -32,7 +32,7 @@
               >Mac Miller Type Beat - 'Netflix and Chill</a
             >
           </div>
-          <div class="user-name text-truncate">
+          <div class="user-name text-truncate font-15">
             <a href="" class="white-a text-muted">
               {{ p.name }}
             </a>

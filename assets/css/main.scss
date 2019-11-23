@@ -4,6 +4,8 @@ a,.white-a{
     color:#fff;
     &:hover{color:#fff;}
 }
+.font-11{font-size: 11px}
+.font-12{font-size: 12px}
 .font-13{font-size: 13px}
 .font-14{font-size: 14px}
 .font-15{font-size: 15px}
@@ -26,9 +28,18 @@ body {
     .el-card__header{
         font-size: 20px;
         font-weight: 600;
+        @media (max-width: 360px), (max-width: 1005px) and (min-width: 768px){
+            font-size: 18px;
+        }
         background:#343035 !important;
         border-bottom: none;
         text-transform: uppercase;
+        span.heading {
+            @media (max-width: 1200px) and (min-width:768px){
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+        }
         .pagination{
             .loading-indicator{
                 width: 35px;
@@ -47,7 +58,7 @@ body {
             margin-top: -5px;
             button{
                 background: #29252A !important;
-                padding: 6px 7px;
+                padding: 6px;
                 font-size: 24px;
                 border-radius: 3px;
                 cursor: pointer;
@@ -64,6 +75,10 @@ body {
     }
     .el-card__body{
         padding:20px 15px;
+        @media (max-width: 380px), 
+        (max-width: 915px) and (min-width: 768px){
+            padding:20px 7px;
+        }
         .item{
             border-bottom: 1px solid #343035;
             padding: 15px 0;
@@ -83,6 +98,11 @@ body {
                 border: 1px solid #343035;
                 border-radius: 3px;
                 width: 50px;
+                @media (max-width: 380px), 
+                (max-width: 915px) and (min-width: 768px){
+                    width: 40px;
+                    margin: 0 10px;
+                }
             }
             &.view-all{
                 text-align: right;

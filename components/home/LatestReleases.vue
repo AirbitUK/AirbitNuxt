@@ -6,7 +6,7 @@
       </div>
       <div v-for="i in items" :key="i.id" class="text item">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-lg-4 col-md-3">
             <div class="d-flex">
               <div class="avatar-container">
                 <div class="overlay"></div>
@@ -40,14 +40,17 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3 col-md-2">
             <div class="user-name-wrapper text-truncate">
-              <a href="" class="text-muted font-weight-bold font-13">
+              <a
+                href=""
+                class="text-muted font-weight-bold font-13 text-truncate"
+              >
                 {{ i.user ? i.user.name : '' }}
               </a>
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-lg-5 col-md-7">
             <div class="actions d-flex mr-2">
               <div class="icons-wrapper">
                 <div class="icon">

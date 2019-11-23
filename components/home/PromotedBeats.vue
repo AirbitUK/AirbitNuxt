@@ -6,7 +6,7 @@
       </div>
       <div class="beats-container">
         <div class="row no-gutters">
-          <div v-for="i in items" :key="i.id" class="col-lg-4">
+          <div v-for="i in items" :key="i.id" class="col-sm-4 col-6">
             <div class="beat-container">
               <div v-if="i.free" class="free-download-banner">FREE</div>
               <div class="beat-info top-info text-right bg-mid-grey">
