@@ -6,7 +6,7 @@
       </div>
       <div v-for="i in items" :key="i.id" class="text item">
         <div class="row">
-          <div class="col-lg-4 col-md-3">
+          <div class="col-lg-4 col-md-3 col-7">
             <div class="d-flex">
               <div class="avatar-container">
                 <div class="overlay"></div>
@@ -34,13 +34,22 @@
                 <a href="" class="beat-name text-nowrap white-a font-13">
                   {{ i.name }}
                 </a>
+                <!-- mobile only -->
+                <div class="user-name text-truncate d-flex d-md-none">
+                  <a
+                    href=""
+                    class="text-muted font-weight-bold font-13 text-truncate"
+                  >
+                    {{ i.user ? i.user.name : '' }}
+                  </a>
+                </div>
                 <div class="genre text-muted font-13">
                   {{ i.genre ? i.genre.name : '' }}
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-2">
+          <div class="col-lg-3 col-md-2 d-none d-md-block">
             <div class="user-name-wrapper text-truncate">
               <a
                 href=""
@@ -50,15 +59,15 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-5 col-md-7">
+          <div class="col-lg-5 col-md-7 col-5">
             <div class="actions d-flex mr-2">
               <div class="icons-wrapper">
-                <div class="icon">
+                <div class="icon d-none d-md-block">
                   <el-tooltip content="Add to playlist" placement="top">
                     <i class="fa fa-headphones"></i>
                   </el-tooltip>
                 </div>
-                <div class="icon">
+                <div class="icon d-none d-md-block">
                   <el-tooltip content="Like" placement="top">
                     <div class="like-wrapper">
                       <i class="fa fa-heart"></i>
@@ -68,7 +77,7 @@
                     </div>
                   </el-tooltip>
                 </div>
-                <div class="icon">
+                <div class="icon d-none d-md-block">
                   <el-tooltip content="Share" placement="top">
                     <i class="fa fa-share-alt"></i>
                   </el-tooltip>
@@ -93,6 +102,39 @@
                     i.pricing && i.pricing.length > 0 ? i.pricing[0].price : 0.0
                   }}
                 </el-button>
+                <!-- mobile only -->
+                <div class="mobile-menu d-inline-flex d-md-none">
+                  <el-dropdown trigger="click">
+                    <span class="el-dropdown-link">
+                      <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <el-dropdown-menu
+                      slot="dropdown"
+                      class="mobile-menu-dropdown"
+                    >
+                      <el-dropdown-item>
+                        <el-tooltip content="Add to playlist" placement="top">
+                          <i class="fa fa-headphones"></i>
+                        </el-tooltip>
+                      </el-dropdown-item>
+                      <el-dropdown-item>
+                        <el-tooltip content="Like" placement="top">
+                          <div class="like-wrapper">
+                            <i class="fa fa-heart"></i>
+                            <span class="like-count text-muted font-14">{{
+                              i.likes
+                            }}</span>
+                          </div>
+                        </el-tooltip>
+                      </el-dropdown-item>
+                      <el-dropdown-item>
+                        <el-tooltip content="Share" placement="top">
+                          <i class="fa fa-share-alt"></i>
+                        </el-tooltip>
+                      </el-dropdown-item>
+                    </el-dropdown-menu>
+                  </el-dropdown>
+                </div>
               </div>
             </div>
           </div>
@@ -186,27 +228,42 @@ export default {
             margin: 0 14px;
             visibility: hidden;
             min-width: 15px;
+            @media (max-width: 1200px) {
+              min-width: 28px;
+              font-size: 14px;
+              .like-count {
+                font-size: 13px !important;
+              }
+            }
             &.free-download {
               color: #75b200;
               visibility: visible;
             }
           }
         }
-        .price button {
-          background-color: $main-color;
-          border: none !important;
-          transition: all 0.3s ease;
-          padding: 5px 8px;
-          border-radius: 5px;
-          font-size: 11px;
-          letter-spacing: 0.5px;
-          min-width: 69px;
-          margin-left: 15px;
-          i {
-            font-weight: 700;
+        .price {
+          button {
+            background-color: $main-color;
+            border: none !important;
+            transition: all 0.3s ease;
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            min-width: 69px;
+            margin-left: 15px;
+            i {
+              font-weight: 700;
+            }
+            &:hover {
+              background-color: darken($main-color, 5%);
+            }
           }
-          &:hover {
-            background-color: darken($main-color, 5%);
+          .mobile-menu {
+            margin-left: 10px;
+            i {
+              color: #fff !important;
+            }
           }
         }
       }

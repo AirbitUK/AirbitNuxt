@@ -76,9 +76,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .home-page > .row > [class*='col'] {
-  padding-right: 8px;
-  padding-left: 8px;
+  @media (min-width: 768px) {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
 }
 </style>
