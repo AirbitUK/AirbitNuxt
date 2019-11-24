@@ -6,7 +6,7 @@
       </div>
       <div v-for="i in items" :key="i.id" class="text item">
         <div class="row">
-          <div class="col-lg-4 col-md-3 col-7">
+          <div class="col-lg-4 col-md-3 col-sm-6 col-5">
             <div class="d-flex">
               <div class="avatar-container">
                 <div class="overlay"></div>
@@ -59,7 +59,7 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-5 col-md-7 col-5">
+          <div class="col-lg-5 col-md-7 col-sm-6 col-7">
             <div class="actions d-flex mr-2">
               <div class="icons-wrapper">
                 <div class="icon d-none d-md-block">
@@ -177,6 +177,12 @@ export default {
       padding: 7px 0;
       cursor: pointer;
       position: relative;
+      & > .row > [class*='col'] {
+        @media (max-width: 768px) {
+          padding-right: 5px;
+          padding-left: 5px;
+        }
+      }
       &.view-all {
         cursor: auto !important;
         background: transparent;
@@ -228,6 +234,9 @@ export default {
             margin: 0 14px;
             visibility: hidden;
             min-width: 15px;
+            @media (max-width: 768px) {
+              margin: 0;
+            }
             @media (max-width: 1200px) {
               min-width: 28px;
               font-size: 14px;
@@ -252,6 +261,9 @@ export default {
             letter-spacing: 0.5px;
             min-width: 69px;
             margin-left: 15px;
+            @media (max-width: 768px) {
+              margin-left: 0;
+            }
             i {
               font-weight: 700;
             }
@@ -260,7 +272,7 @@ export default {
             }
           }
           .mobile-menu {
-            margin-left: 10px;
+            margin: 0 10px;
             i {
               color: #fff !important;
             }
