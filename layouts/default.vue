@@ -6,7 +6,7 @@
         <div class="container-fluid">
           <div class="wrapper-container">
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 search-col">
                 <Searchbox />
               </div>
               <div class="col-md-12">
@@ -57,5 +57,9 @@ html {
   .container-fluid {
     max-width: 1140px;
   }
+}
+.wrapper-container .search-col {
+  padding-right: 8px !important;
+  padding-left: 8px !important;
 }
 </style>

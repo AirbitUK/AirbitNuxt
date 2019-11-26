@@ -47,10 +47,14 @@
                   <i class="fa fa-play"></i>
                 </span>
                 <span class="hover-menu-icon">
-                  <i class="fa fa-forward"></i>
+                  <el-tooltip content="Add to queue" placement="top">
+                    <i class="fa fa-forward"></i>
+                  </el-tooltip>
                 </span>
                 <span class="hover-menu-icon">
-                  <i class="fa fa-headphones"></i>
+                  <el-tooltip content="Add to playist" placement="top">
+                    <i class="fa fa-headphones"></i>
+                  </el-tooltip>
                 </span>
               </div>
             </div>
