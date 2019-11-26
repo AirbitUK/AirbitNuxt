@@ -16,6 +16,9 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  env: {
+    apiUrl: process.env.API_URL || 'https://api.airbit.com'
+  },
   /*
    ** Customize the progress-bar color
    */
@@ -59,7 +62,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: process.env.API_URL || 'https://api.airbit.com'
+  },
   /*
    ** Build configuration
    */

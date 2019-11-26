@@ -6,10 +6,7 @@
       </div>
       <div class="winner-info">
         <div class="winner-avatar">
-          <img
-            src="https://cdn.airbit.com/avatars/b3bcd20ed98a18dbb1d9585658dbed21@600x.jpg"
-            alt="producer name"
-          />
+          <img src="https://via.placeholder.com/150" alt="producer name" />
         </div>
         <div class="winner-name">
           SUPAMARIOBEATZ

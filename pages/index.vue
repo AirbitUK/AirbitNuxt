@@ -40,33 +40,38 @@ export default {
   },
   loading: false,
   async asyncData({ $axios }) {
+    console.log(`apiUrl`, process.env.apiUrl)
     const latestReleases = {
       endpointUrl:
-        'https://api.airbit.com/beats/search?page=1&limit=12&search=&genre=0&moods=0&added=3&tempo=0&order=plays&free_download=0&marketplace=1&expand=user',
+        '/beats/search?page=1&limit=12&search=&genre=0&moods=0&added=3&tempo=0&order=plays&free_download=0&marketplace=1&expand=user',
       data: []
     }
 
     const topProducers = {
       endpointUrl:
-        'https://api.airbit.com/charts/marketplace_top_earning_producers?period=7&limit=10&page=1',
+        '/charts/marketplace_top_earning_producers?period=7&limit=10&page=1',
       data: []
     }
 
-    const latestReleaseData = await $axios.$get(latestReleases.endpointUrl)
-    if (latestReleaseData && latestReleaseData.items) {
-      latestReleases.data = latestReleaseData.items
-    }
-
-    const topProducersData = await $axios.$get(topProducers.endpointUrl)
-    if (
-      topProducersData &&
-      topProducersData.item &&
-      topProducersData.item.items
-    ) {
-      if (topProducersData.item.items.length !== 0) {
-        topProducers.data = topProducersData.item.items
+    try {
+      const latestReleaseData = await $axios.$get(latestReleases.endpointUrl)
+      if (latestReleaseData && latestReleaseData.items) {
+        latestReleases.data = latestReleaseData.items
       }
-    }
+    } catch (e) {}
+
+    try {
+      const topProducersData = await $axios.$get(topProducers.endpointUrl)
+      if (
+        topProducersData &&
+        topProducersData.item &&
+        topProducersData.item.items
+      ) {
+        if (topProducersData.item.items.length !== 0) {
+          topProducers.data = topProducersData.item.items
+        }
+      }
+    } catch (e) {}
 
     return {
       latestReleases: latestReleases.data,
