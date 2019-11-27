@@ -124,7 +124,9 @@ export default {
           a.nav-link {
             font-size: 13px;
             color: #fff;
-            margin: 0 8px;
+            height: 60px;
+            line-height: 60px;
+            padding: 0 0.9rem;
             font-weight: 300;
             i:first-child {
               margin-right: 3px;
@@ -134,6 +136,9 @@ export default {
                 position: relative;
                 top: 3px;
               }
+            }
+            &:hover {
+              background: #29252a;
             }
           }
           &.home {
