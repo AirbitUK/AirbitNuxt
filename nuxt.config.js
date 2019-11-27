@@ -54,9 +54,9 @@ export default {
   ],
   bootstrapVue: {
     // bootstrapCSS: false, // Or `css: false`
-    // bootstrapVueCSS: false // Or `bvCSS: false`
-    componentPlugins: ['LayoutPlugin'],
-    directivePlugins: []
+    // bootstrapVueCSS: false // Or `bvCSS: false`,
+    componentPlugins: ['LayoutPlugin', 'NavbarPlugin']
+    // directivePlugins: []
   },
   /*
    ** Axios module configuration

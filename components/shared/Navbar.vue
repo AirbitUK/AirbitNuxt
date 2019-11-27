@@ -1,93 +1,106 @@
 <template>
   <div class="navbar-wrapper">
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">
+      <b-navbar toggleable="lg" type="dark">
+        <b-navbar-brand href="#">
           <img src="/airbit-white.svg" alt="airbit" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        </b-navbar-brand>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-        <div id="navbarSupportedContent" class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link home" href="#">
-                <i class="fa fa-home"></i>
-                <span class="sr-only">(current)</span></a
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item href="#home" class="home">
+              <i class="fa fa-home"></i>
+            </b-nav-item>
+            <b-nav-item href="#">
+              <el-menu
+                class="el-menu-demo"
+                mode="horizontal"
+                background-color="#1e191f"
+                text-color="#fff"
               >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                id="navbarDropdown"
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
+                <el-submenu index="2">
+                  <template slot="title">
+                    <i class="fa fa-music"></i>
+                    Beats
+                  </template>
+                  <el-menu-item index="2-1">item one</el-menu-item>
+                  <el-menu-item index="2-2">item two</el-menu-item>
+                  <el-menu-item index="2-3">item three</el-menu-item>
+                  <el-submenu index="2-4">
+                    <template slot="title">item four</template>
+                    <el-menu-item index="2-4-1">item one</el-menu-item>
+                    <el-menu-item index="2-4-2">item two</el-menu-item>
+                    <el-menu-item index="2-4-3">item three</el-menu-item>
+                  </el-submenu>
+                </el-submenu>
+              </el-menu>
+            </b-nav-item>
+            <!-- <b-nav-item-dropdown text="Beats" right>
+              <template v-slot:button-content>
                 <i class="fa fa-music"></i>
                 Beats
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="fa fa-trophy"></i>
-                Top Charts
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                id="navbarDropdown"
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i class="fa fa-music"></i>
+              </template>
+              <b-dropdown-item href="#">EN</b-dropdown-item>
+              <b-dropdown-item href="#">ES</b-dropdown-item>
+              <b-dropdown-item href="#">RU</b-dropdown-item>
+              <b-dropdown-item href="#">FA</b-dropdown-item>
+            </b-nav-item-dropdown> -->
+            <b-nav-item href="#">
+              <i class="fa fa-trophy"></i>
+              Top Charts
+            </b-nav-item>
+            <b-nav-item-dropdown text="Beats" right>
+              <template v-slot:button-content>
+                <i class="fa fa-paypal"></i>
                 Sell Beats
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-          <!-- <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form> -->
-        </div>
-      </nav>
+              </template>
+              <b-dropdown-item href="#">EN</b-dropdown-item>
+              <b-dropdown-item href="#">ES</b-dropdown-item>
+              <b-dropdown-item href="#">RU</b-dropdown-item>
+              <b-dropdown-item href="#">FA</b-dropdown-item>
+            </b-nav-item-dropdown>
+          </b-navbar-nav>
+
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item href="#">
+              <i class="fa fa-paper-plane"></i>
+              Dashboard
+            </b-nav-item>
+            <b-nav-item href="#">
+              <i class="fa fa-user"></i>
+              Sign Up
+            </b-nav-item>
+            <b-nav-item href="#">
+              <i class="fa fa-shopping-cart"></i>
+            </b-nav-item>
+            <b-nav-item-dropdown text="Lang" right>
+              <template v-slot:button-content>
+                <i class="fa fa-user-circle"></i>
+              </template>
+              <b-dropdown-item href="#">EN</b-dropdown-item>
+              <b-dropdown-item href="#">ES</b-dropdown-item>
+              <b-dropdown-item href="#">RU</b-dropdown-item>
+              <b-dropdown-item href="#">FA</b-dropdown-item>
+            </b-nav-item-dropdown>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      activeIndex: '1',
+      activeIndex2: '1'
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .navbar-wrapper {
@@ -96,6 +109,7 @@
   margin-bottom: 25px;
   nav.navbar {
     width: 100%;
+    height: 60px;
     .navbar-brand {
       img {
         width: 129px;
@@ -105,15 +119,26 @@
     }
     .navbar-collapse {
       ul.navbar-nav {
+        align-items: center;
         li.nav-item {
           a.nav-link {
             font-size: 13px;
             color: #fff;
             margin: 0 8px;
-            &.home {
-              i {
-                font-size: 22px;
+            font-weight: 300;
+            i:first-child {
+              margin-right: 3px;
+            }
+            &.dropdown-toggle {
+              &::after {
+                position: relative;
+                top: 3px;
               }
+            }
+          }
+          &.home {
+            i {
+              font-size: 22px;
             }
           }
         }
