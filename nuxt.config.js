@@ -50,7 +50,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'bootstrap-vue/nuxt',
-    '@nuxtjs/font-awesome'
+    '@nuxtjs/font-awesome',
+    '@nuxtjs/dotenv'
   ],
   bootstrapVue: {
     // bootstrapCSS: false, // Or `css: false`

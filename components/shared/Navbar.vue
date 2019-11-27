@@ -75,7 +75,7 @@
             <b-nav-item href="#">
               <i class="fa fa-shopping-cart"></i>
             </b-nav-item>
-            <b-nav-item-dropdown text="Lang" right>
+            <b-nav-item-dropdown text="Lang" right class="guest-menu">
               <template v-slot:button-content>
                 <i class="fa fa-user-circle"></i>
               </template>
