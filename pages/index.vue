@@ -40,8 +40,6 @@ export default {
   },
   loading: false,
   async asyncData({ $axios }) {
-    console.log(`axios`,$axios)
-    console.log(`API_URL`,process.env.API_URL)
     const latestReleases = {
       endpointUrl:
         '/beats/search?page=1&limit=12&search=&genre=0&moods=0&added=3&tempo=0&order=plays&free_download=0&marketplace=1&expand=user',
