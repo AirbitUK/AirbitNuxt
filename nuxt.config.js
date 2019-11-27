@@ -16,7 +16,8 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [{ src: 'https://code.iconify.design/1/1.0.3/iconify.min.js' }]
   },
   env: {
     apiUrl: process.env.API_URL || 'https://api.airbit.com'
@@ -32,7 +33,8 @@ export default {
   css: [
     'element-ui/lib/theme-chalk/index.css',
     // SCSS file in the project
-    '@/assets/css/main.scss'
+    '@/assets/css/main.scss',
+    '@/assets/css/simple-line-icons.css'
   ],
   /*
    ** Plugins to load before mounting the App

@@ -10,79 +10,80 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item href="#home" class="home">
-              <i class="fa fa-home"></i>
+              <i class="home-icon icon-home"></i>
             </b-nav-item>
+            <el-menu
+              class="el-menu-demo"
+              mode="horizontal"
+              background-color="#1e191f"
+              text-color="#fff"
+            >
+              <el-submenu index="2">
+                <template slot="title">
+                  <i class="icon-music-tone smaller"></i>
+                  Beats
+                </template>
+                <el-menu-item index="2-1">item one</el-menu-item>
+                <el-menu-item index="2-2">item two</el-menu-item>
+                <el-menu-item index="2-3">item three</el-menu-item>
+              </el-submenu>
+            </el-menu>
             <b-nav-item href="#">
-              <el-menu
-                class="el-menu-demo"
-                mode="horizontal"
-                background-color="#1e191f"
-                text-color="#fff"
-              >
-                <el-submenu index="2">
-                  <template slot="title">
-                    <i class="fa fa-music"></i>
-                    Beats
-                  </template>
-                  <el-menu-item index="2-1">item one</el-menu-item>
-                  <el-menu-item index="2-2">item two</el-menu-item>
-                  <el-menu-item index="2-3">item three</el-menu-item>
-                  <el-submenu index="2-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="2-4-1">item one</el-menu-item>
-                    <el-menu-item index="2-4-2">item two</el-menu-item>
-                    <el-menu-item index="2-4-3">item three</el-menu-item>
-                  </el-submenu>
-                </el-submenu>
-              </el-menu>
-            </b-nav-item>
-            <!-- <b-nav-item-dropdown text="Beats" right>
-              <template v-slot:button-content>
-                <i class="fa fa-music"></i>
-                Beats
-              </template>
-              <b-dropdown-item href="#">EN</b-dropdown-item>
-              <b-dropdown-item href="#">ES</b-dropdown-item>
-              <b-dropdown-item href="#">RU</b-dropdown-item>
-              <b-dropdown-item href="#">FA</b-dropdown-item>
-            </b-nav-item-dropdown> -->
-            <b-nav-item href="#">
-              <i class="fa fa-trophy"></i>
+              <i class="icon-trophy smaller"></i>
               Top Charts
             </b-nav-item>
-            <b-nav-item-dropdown text="Beats" right>
-              <template v-slot:button-content>
-                <i class="fa fa-paypal"></i>
-                Sell Beats
-              </template>
-              <b-dropdown-item href="#">EN</b-dropdown-item>
-              <b-dropdown-item href="#">ES</b-dropdown-item>
-              <b-dropdown-item href="#">RU</b-dropdown-item>
-              <b-dropdown-item href="#">FA</b-dropdown-item>
-            </b-nav-item-dropdown>
+            <el-menu
+              class="el-menu-demo"
+              mode="horizontal"
+              background-color="#1e191f"
+              text-color="#fff"
+            >
+              <el-submenu index="2">
+                <template slot="title">
+                  <i class="icon-paypal smaller"></i>
+                  Sell Beats
+                </template>
+                <el-menu-item index="2-1">
+                  Airbit Features
+                </el-menu-item>
+                <el-menu-item index="2-2">
+                  The Infinity Store
+                </el-menu-item>
+                <el-menu-item index="2-3">
+                  YouTube Content ID
+                </el-menu-item>
+              </el-submenu>
+            </el-menu>
           </b-navbar-nav>
-
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
             <b-nav-item href="#">
-              <i class="fa fa-paper-plane"></i>
+              <i class="icon-speedometer"></i>
               Dashboard
             </b-nav-item>
             <b-nav-item href="#">
-              <i class="fa fa-user"></i>
+              <i class="icon-user"></i>
               Sign Up
             </b-nav-item>
-            <b-nav-item href="#">
+            <b-nav-item href="#" class="cart-toggle">
               <i class="fa fa-shopping-cart"></i>
             </b-nav-item>
             <b-nav-item-dropdown text="Lang" right class="guest-menu">
               <template v-slot:button-content>
-                <i class="fa fa-user-circle"></i>
+                <i class="fa fa-user-circle-o"></i>
               </template>
-              <b-dropdown-item href="#">EN</b-dropdown-item>
-              <b-dropdown-item href="#">ES</b-dropdown-item>
-              <b-dropdown-item href="#">RU</b-dropdown-item>
-              <b-dropdown-item href="#">FA</b-dropdown-item>
+              <b-dropdown-item href="#">
+                <i class="icon-login"></i>
+                Login
+              </b-dropdown-item>
+              <b-dropdown-item href="#">
+                <i class="icon-speedometer"></i>
+                Dashboard
+              </b-dropdown-item>
+              <b-dropdown-item href="#">
+                <i class="icon-basket"></i>
+                My Purchases
+              </b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
@@ -126,7 +127,7 @@ export default {
             color: #fff;
             height: 60px;
             line-height: 60px;
-            padding: 0 0.9rem;
+            padding: 0 1rem;
             font-weight: 300;
             i:first-child {
               margin-right: 3px;
@@ -143,11 +144,94 @@ export default {
           }
           &.home {
             i {
-              font-size: 22px;
+              font-size: 18px;
+              position: relative;
+              top: 4px;
+            }
+          }
+          &.guest-menu,
+          &.cart-toggle {
+            a.nav-link {
+              i {
+                font-size: 20px;
+                position: relative;
+                top: 3px;
+              }
+            }
+            .dropdown-toggle::after {
+              display: none !important;
+            }
+          }
+          &.guest-menu {
+            .dropdown-menu {
+              .dropdown-item {
+                padding-left: 30px !important;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                position: relative;
+                i {
+                  position: absolute;
+                  left: 10px;
+                  top: 7px;
+                }
+              }
+            }
+            &.show {
+              a.nav-link {
+                background: #29252a;
+              }
             }
           }
         }
       }
+      .dropdown-menu {
+        background: #29252a;
+        border: 1px solid #343035;
+        border-radius: 0;
+        margin: 0 !important;
+        li a {
+          color: #fff;
+          font-size: 13px;
+          &:hover {
+            background: #343035 !important;
+          }
+        }
+      }
+      .el-submenu__title {
+        padding: 0 1rem;
+        font-size: 13px;
+        border-bottom: none;
+        i {
+          color: #fff;
+        }
+        &:hover {
+          background: #29252a !important;
+        }
+      }
+    }
+  }
+}
+.el-menu {
+  background-color: #29252a !important;
+  font-size: 13px;
+  border-bottom: none !important;
+  &.el-menu--popup {
+    border: 1px solid #343035;
+    min-width: auto;
+  }
+  .el-menu-item {
+    height: auto;
+    line-height: normal;
+    font-size: 13px !important;
+    background-color: #29252a !important;
+    padding-left: 30px !important;
+    padding-right: 20px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    height: auto !important;
+    line-height: normal !important;
+    &:hover {
+      background: #343035 !important;
     }
   }
 }

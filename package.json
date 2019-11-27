@@ -19,7 +19,8 @@
     "@nuxtjs/font-awesome": "^1.0.4",
     "bootstrap-vue": "^2.1.0",
     "element-ui": "^2.4.11",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "simple-line-icons": "^2.4.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
