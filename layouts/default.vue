@@ -1,8 +1,38 @@
 <template>
-  <div>
-    <nuxt />
+  <div class="wrapper">
+    <div>
+      <Navbar />
+      <div class="wrapper-content">
+        <div class="container-fluid">
+          <div class="wrapper-container">
+            <div class="row">
+              <div class="col-md-12 search-col">
+                <Searchbox />
+              </div>
+              <div class="col-md-12">
+                <div class="page-content mt-4">
+                  <nuxt />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+import Navbar from '~/components/shared/Navbar.vue'
+import Searchbox from '~/components/shared/Searchbox.vue'
+
+export default {
+  components: {
+    Navbar,
+    Searchbox
+  }
+}
+</script>
 
 <style>
 html {
@@ -23,33 +53,13 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 1140px;
+  }
 }
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.wrapper-container .search-col {
+  padding-right: 8px !important;
+  padding-left: 8px !important;
 }
 </style>
